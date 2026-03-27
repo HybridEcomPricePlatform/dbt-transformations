@@ -1,0 +1,13 @@
+# Credentials 
+.env 
+price-key.json 
+profiles.yml 
+ 
+# dbt runtime — never commit these 
+target/ 
+dbt_packages/ 
+logs/
+ 
+# OS 
+.DS_Store 
+Thumbs.db 
