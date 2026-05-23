@@ -1,0 +1,12 @@
+# Credentials 
+.env
+ 
+# dbt runtime — never commit these 
+target/ 
+dbt_packages/ 
+logs/
+.user.yml
+ 
+# OS 
+.DS_Store 
+Thumbs.db
