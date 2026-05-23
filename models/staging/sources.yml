@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: price_raw
+    description: "Données brutes chargées depuis GCS"
+    tables:
+      - name: price_events
+        description: "Table contenant les JSON extraits par Scrapy"
