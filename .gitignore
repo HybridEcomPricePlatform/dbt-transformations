@@ -1,7 +1,7 @@
 # Credentials 
 .env
-profiles.yml
- 
+profiles.yml 
+
 # dbt runtime — never commit these 
 target/ 
 dbt_packages/ 
