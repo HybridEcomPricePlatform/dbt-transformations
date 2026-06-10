@@ -2,7 +2,17 @@ version: 2
 
 sources:
   - name: price_raw
-    description: "Données brutes chargées depuis GCS"
+    database: price-intel-prod
+    schema: price_intelligence
     tables:
       - name: price_events
-        description: "Table contenant les JSON extraits par Scrapy"
+        description: "Raw price events from scrapers"
+        columns:
+          - name: product_id
+            description: "Unique product identifier"
+          - name: site_name
+            description: "Source website"
+          - name: price
+            description: "Product price"
+          - name: scraped_at
+            description: "Scraping timestamp"
