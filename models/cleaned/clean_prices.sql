@@ -17,7 +17,6 @@ filtered as (
     where rn = 1
       and price is not null
       and price > 0
-      -- Filtrage de prix aberrants potentiels
       and price < 1000000
 )
 
@@ -32,5 +31,7 @@ select
     category,
     image_url,
     source_url,
+    rating,
+    review_count,
     scraped_at
 from filtered
