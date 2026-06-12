@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: stg_prices
+    description: "Staged and typed price events"
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+      - name: price
+        tests:
+          - not_null
+      - name: site_name
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['jumia_ma', 'electroplanet']
+      - name: scraped_at
+        tests:
+          - not_null
+
+  - name: clean_prices
+    description: "Deduplicated and filtered price records"
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+      - name: price
+        tests:
+          - not_null
+      - name: site_name
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['jumia_ma', 'electroplanet']
+      - name: availability
+        tests:
+          - accepted_values:
+              values: ['in_stock', 'out_of_stock', 'unknown']

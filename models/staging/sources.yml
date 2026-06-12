@@ -2,7 +2,22 @@ version: 2
 
 sources:
   - name: price_raw
-    description: "Données brutes chargées depuis GCS"
+    description: "Raw data loaded from GCS"
     tables:
       - name: price_events
-        description: "Table contenant les JSON extraits par Scrapy"
+        description: "Price events extracted by Scrapy spiders"
+        columns:
+          - name: product_id
+            tests:
+              - not_null
+          - name: price
+            tests:
+              - not_null
+          - name: site_name
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ['jumia_ma', 'electroplanet']
+          - name: scraped_at
+            tests:
+              - not_null
