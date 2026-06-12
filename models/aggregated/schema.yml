@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: agg_prices
+    description: "Aggregated price statistics per product across all scrape runs. One row per product_id. Used by FastAPI dashboard endpoints."
+    columns:
+      - name: product_id
+        description: "MD5 hash identifier. Primary key of this model."
+        tests: [not_null, unique]
+      - name: min_price
+        description: "Lowest observed price in MAD across all scrape runs."
+      - name: max_price
+        description: "Highest observed price in MAD across all scrape runs."
+      - name: avg_price
+        description: "Mean price in MAD across all scrape runs."
+      - name: price_stddev
+        description: "Standard deviation of price. NULL when only one observation exists."
+      - name: scrape_count
+        description: "Number of times this product was observed."
