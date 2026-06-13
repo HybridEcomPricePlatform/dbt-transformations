@@ -40,6 +40,8 @@ flowchart LR
     agg --> pi[price_intelligence\ntable · marts\n934 rows\nJoins agg + latest metadata\nrating · review_count included]
 ```
 
+![dbt lineage graph](docs/images/dbt_lineage_graph.png)
+
 ---
 
 ## Repository Structure
